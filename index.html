@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loader-container">
+        <div class="loader">
+            <div class="progress-circle">
+                <span id="loader-percentage">0%</span>
+                <svg>
+                    <circle cx="50" cy="50" r="45"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <h1>Simple Quiz App</h1>
+    </header>
+    <main class="quiz-container" style="display: none;">
+        <div id="quiz">
+            <div class="question" id="question">Loading question...</div>
+            <div class="options" id="options"></div>
+        </div>
+        <div class="result" id="result" style="display: none;"></div>
+    </main>
+    <footer class="footer">
+        <p>© 2025 Simple Quiz App. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    background: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+/* Quiz Container */
+.quiz-container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    text-align: center;
+    transform: translateY(50px);
+    animation: slide-in 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Animation for Quiz Container */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Question */
+.question {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #333;
+    animation: fade-in 0.5s ease-out;
+}
+
+/* Animation for Fade-in */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Options */
+.options button {
+    display: block;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 15px 0;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.options button:hover {
+    background: linear-gradient(90deg, #0056b3, #003f8a);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Result */
+.result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #4caf50;
+    animation: pop-in 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Loader Container */
+#loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Loader */
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.progress-circle svg {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+    fill: none;
+    stroke: #007BFF;
+    stroke-width: 10;
+    stroke-dasharray: 283;
+    /* 2 * π * 45 (circle circumference) */
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 0.2s ease-in-out;
+}
+
+.progress-circle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Hide loader when done */
+body.loaded #loader-container {
+    display: none;
+}
+
+
+/* Pop-in Animation for Result */
+@keyframes pop-in {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .navbar {
+        font-size: 1.5em;
+    }
+
+    .quiz-container {
+        padding: 20px;
+    }
+
+    .options button {
+        font-size: 1em;
+    }
+}
